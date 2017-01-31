@@ -1,0 +1,11 @@
+<webscript>
+	<shortname>send-doc-to-scan</shortname>
+	<description>Send document to Scan
+		"http://hades.zylk.net:8080/alfresco/service/org/alfresco/slingshot/doclib/action/SendDocToScan"
+		Pasandole el ticket con la autentificación.
+	</description>
+	<url>/scanner/send-doc-to-scan</url>
+	<format default="json">argument</format>	
+	<authentication>user</authentication>
+  	<transaction>required</transaction>  	
+</webscript>

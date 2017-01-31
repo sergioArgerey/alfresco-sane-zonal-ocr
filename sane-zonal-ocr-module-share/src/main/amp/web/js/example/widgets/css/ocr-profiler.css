@@ -1,0 +1,239 @@
+/*
+ * imgAreaSelect default style
+ */
+
+.imgareaselect-border1 {
+	background: url(border-v.gif) repeat-y left top;
+}
+
+.imgareaselect-border2 {
+    background: url(border-h.gif) repeat-x left top;
+}
+
+.imgareaselect-border3 {
+    background: url(border-v.gif) repeat-y right top;
+}
+
+.imgareaselect-border4 {
+    background: url(border-h.gif) repeat-x left bottom;
+}
+
+.imgareaselect-border1, .imgareaselect-border2,
+.imgareaselect-border3, .imgareaselect-border4 {
+    filter: alpha(opacity=50);
+	opacity: 0.5;
+}
+
+.imgareaselect-handle {
+    background-color: #fff;
+    border: solid 1px #000;
+    filter: alpha(opacity=50);
+    opacity: 0.5;
+}
+
+.imgareaselect-outer {
+    background-color: #000;
+    filter: alpha(opacity=50);
+    opacity: 0.5;
+}
+
+.imgareaselect-selection {
+}
+
+
+
+
+
+
+/*
+ * mystyles
+ */
+#lista{
+    /*background-color: #ddd;*/
+    height: 200px;
+    width: 900px;
+    overflow: auto;
+    border: 1px solid #004700;
+    border-radius:4px;
+    margin-left: 3px;
+
+}
+
+#lista input {
+    margin: 0;
+    -webkit-border-radius:4px;
+    -moz-border-radius:4px;
+    border-radius:4px;
+    background: #f8f8f8;
+    color:#888;
+    border: 1px solid #C8BFC4;
+    outline:none;
+    display: inline-block;
+    -webkit-appearance:none;
+    -moz-appearance:none;
+    appearance:none;
+    cursor:pointer;
+}
+
+#lista button {
+	background-color: #004700;
+	color: white;
+    -webkit-border-radius:5px;
+    -moz-border-radius:5px;
+    border-radius:5px;
+    padding: 0px;
+}
+
+#lista table{
+	border:none;
+}
+
+#lista table thead tr td{
+	color: color:#888;
+}
+
+:-webkit-full-screen {
+}
+
+:-moz-full-screen {
+}
+
+:-ms-fullscreen {
+}
+
+:fullscreen {
+}
+
+label {
+    position: relative;
+    display: inline-block;
+}
+.datagrid input{
+    margin: 0;
+    -webkit-border-radius:4px;
+    -moz-border-radius:4px;
+    border-radius:4px;
+    background: #f8f8f8;
+    color:#888;
+    border: 1px solid #C8BFC4;
+    outline:none;
+    display: inline-block;
+    -webkit-appearance:none;
+    -moz-appearance:none;
+    appearance:none;
+    cursor:pointer;
+}
+
+.datagrid button{
+	background-color: #004700;
+	color: white;
+    -webkit-border-radius:5px;
+    -moz-border-radius:5px;
+    border-radius:5px;
+    font-size: 12px;
+	font-weight: bold;
+	padding-left: 4px;
+	padding-right: 4px;
+	font-family: Avant Garde;
+}
+
+.datagrid input[type="submit"]{
+	background-color: #004700;
+	color: white;
+    -webkit-border-radius:5px;
+    -moz-border-radius:5px;
+    border-radius:5px;
+    font-size: 12px;
+	font-weight: bold;
+	padding-left: px;
+	padding-right: 4px;
+	padding-top: 1px;
+	font-family: Avant Garde;
+}
+
+
+select {
+    display: inline-block;
+    padding: 2px 0px 3px 0px;
+    /*width: 250px;*/
+    outline: none;
+    color: #74646e;
+    border: 1px solid #C8BFC4;
+    border-radius: 4px;
+    box-shadow: inset 1px 1px 2px #ddd8dc;
+    background-color: #fff;
+    -webkit-appearance: none;  /*Removes default chrome and safari style*/
+    -moz-appearance: none; /* Removes Default Firefox style*/
+    /*text-overflow: "";*/  /*Removes default arrow from firefox*/
+    /*text-indent: 0.01px;*/ /* Removes default arrow from firefox*/
+    cursor:pointer;
+}
+
+ul{
+	list-style-type: none;
+	padding-right: 0px;
+}
+
+form{
+	text-align: right;
+}
+/*
+form input[type="text"]{
+	margin-left: 10px;
+}
+*/
+li{
+	margin-right: 30px;
+	margin-bottom: 10px;
+}
+
+li :AFTER{
+	margin-right: 30px;
+}
+
+.datagrid {
+	font: normal 12px/150% Geneva, Arial, Helvetica, sans-serif;
+	background: #fff;
+	overflow: hidden;
+	border: 1px solid #004700;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	color: #004700;
+}
+
+#titulos {
+	margin-left: 3px;
+	border-collapse: collapse;
+}
+
+#titulos thead :FIRST-CHILD{
+	border-top-left-radius:4px;
+	border-bottom-left-radius:4px;
+}
+
+#titulos thead :LAST-CHILD{
+	border-top-right-radius:4px;
+	border-bottom-right-radius:4px;
+}
+
+#titulos thead th {
+	/*
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, #004700
+		), color-stop(1, #66FF99));
+	background: -moz-linear-gradient(center top, #004700 5%, #66FF99 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#006699',
+		endColorstr='#004700');*/
+	background-color: #004700;
+	color: #FFFFFF;
+	font-size: 15px;
+	font-weight: bold;
+	/*border-left: 1px solid #0070A8;*/
+}
+
+textarea {
+	width: 900px;
+	height: 150px;
+	margin-left: 3px;
+
+}
