@@ -7,3 +7,11 @@ release.properties
 dependency-reduced-pom.xml
 buildNumber.properties
 .mvn/timing.properties
+
+# Eclipse project files
+.classpath
+.project
+
+# Intellij Idea
+*.iml
+.idea
