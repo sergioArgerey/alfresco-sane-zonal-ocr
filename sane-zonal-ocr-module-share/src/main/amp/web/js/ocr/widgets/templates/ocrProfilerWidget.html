@@ -1,0 +1,71 @@
+<div class="datagrid ocr-profiler-widget ocrProfiler-widget" id="form">
+
+    <span class="ocr">OCR</span><span><sub>by zylk</sub></span>
+    <div style="float: right;">
+
+<ul>
+    <li>
+        <p>Indique la imagen sobre la que quiere realizar el perfil de OCR.</p>
+        <input type="text" id="img-url" name="url" size="50"/>
+        <input type="submit" id="loadImageButton" value="url imagen"/>
+        <input type="hidden" id="profile" name="profile"/>
+    </li>
+    <li>
+        <span>Document Type:</span>
+        <input type="text" id="type"/>
+    </li>
+    <li>
+        <strong>X<sub>1</sub>:</strong>
+        <input type="text" id="x1" value="0" size="6" style="margin-right: 20px;"/>
+        <strong>Y<sub>1</sub>:</strong>
+        <input type="text" id="y1" value="0" size="6" style="margin-right: 20px;"/>
+        <b>Width:</b><input type="text" value="300" id="width" size="6" style="margin-right: 20px;"/>
+        <b>Height:</b><input type="text" id="height" value="200" size="6" style="margin-right: 20px;"/>
+        <button id="btnAgregar">agregar zona ocr</button>
+    </li>
+    <li>
+        <button id="btnGenerar">generar perfil</button>
+        <input type="submit" id="btnDescargar" disabled="disabled" name="download" value="descargar">
+    </li>
+
+    <li class="hidden">
+        <span id="realX"></span>
+        <span id="realY"></span>
+    </li>
+    <li class="hidden">
+        <b>X<sub>2</sub>:</b>
+        <input type="text" id="x2" value="-" />
+    </li>
+    <li class="hidden">
+        <b>Y<sub>2</sub>:</b>
+        <input type="text" id="y2" value="-" />
+    </li>
+</ul>
+</div>
+<table id="titulos">
+    <thead>
+    <tr align='center'>
+        <th id="titleX">X</th>
+        <th id="titleY">Y</th>
+        <th id="titleW">W</th>
+        <th id="titleH">H</th>
+        <th id="titleMetadata">Metadata</th>
+        <th id="titleLanguage">Language</th>
+        <!-- <th id="titleTypography">Typography</th> -->
+        <th id="titlePSM">PSM</th>
+        <th id="titleRemove">X</th>
+    </tr>
+    </thead>
+</table>
+<div id="lista">
+    <!-- Dinamic list -->
+</div>
+<textarea id="copyCode" rows="10" cols="111" readonly="readonly"></textarea>
+<div class="container demo">
+    <div>
+        <div class="frame">
+            <img id="photo" src="" />
+        </div>
+    </div>
+</div>
+</div>

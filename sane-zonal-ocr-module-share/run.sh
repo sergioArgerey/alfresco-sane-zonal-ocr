@@ -16,4 +16,4 @@ if [[ -z ${MAVEN_OPTS} ]]; then
     MAVEN_OPTS="-javaagent:$springloadedfile -noverify"
 fi
 echo "MAVEN_OPTS is set to '$MAVEN_OPTS'";
-mvn clean install -Pamp-to-war -Pmaven.tomcat.port=8081
+mvn -X clean install -Pamp-to-war -Pmaven.tomcat.port=8081

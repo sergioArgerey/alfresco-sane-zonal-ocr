@@ -1,7 +1,7 @@
 <extension>
   <modules>
     <module>
-      <id>sane-zonal-ocr-module-share - Example Aikau Widgets</id>
+      <id>Sane zonal ocr module share Aikau Widget</id>
       <version>1.0</version>
       <auto-deploy>true</auto-deploy>
       <configurations>
@@ -9,7 +9,9 @@
           <web-framework>
             <dojo-pages>
               <packages>
-                <package name="example" location="js/example"/>
+                <package name='jquery-1.9.0' location='js/lib/jquery' main='jquery.min'/>
+                <package name='jquery.imgareaselect' location='js/lib/jquery.imgareaselect' main='jquery.imgareaselect.min'/>
+                <package name='ocr.profiler' location='js/lib/ocr-profiler' main='ocr-profiler'/>
               </packages>
             </dojo-pages>
           </web-framework>
