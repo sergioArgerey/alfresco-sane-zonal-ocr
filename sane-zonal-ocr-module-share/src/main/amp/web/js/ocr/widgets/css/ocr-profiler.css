@@ -411,3 +411,7 @@ input#height {
 .coordinate-group div.form-group div.input-group {
     margin-right: 12px;
 }
+
+.coordinate-group div.form-group div.input-group input {
+    background-color: #d0e9c6;
+}
