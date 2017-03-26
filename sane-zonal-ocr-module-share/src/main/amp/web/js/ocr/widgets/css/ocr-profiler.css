@@ -72,15 +72,15 @@ font-size: 150%; font-family:monospace; font-weight: bold; padding-left: 0.3em; 
 #lista{
     /*background-color: #ddd;*/
     height: 200px;
-    width: 900px;
+    /*width: 900px;*/
     overflow: auto;
-    border: 1px solid #004700;
+    /*border: 1px solid #004700;*/
     border-radius:4px;
-    margin-left: 3px;
+    /*margin-left: 3px;*/
 
 }
 
-#lista input {
+/*#lista input {
     margin: 0;
     -webkit-border-radius:4px;
     -moz-border-radius:4px;
@@ -94,16 +94,16 @@ font-size: 150%; font-family:monospace; font-weight: bold; padding-left: 0.3em; 
     -moz-appearance:none;
     appearance:none;
     cursor:pointer;
-}
+}*/
 
-#lista button {
+/*#lista button {
 	background-color: #004700;
 	color: white;
     -webkit-border-radius:5px;
     -moz-border-radius:5px;
     border-radius:5px;
-    padding: 0px;
-}
+    *//*padding: 0px;*//*
+}*/
 
 #lista table{
 	border:none;
@@ -129,7 +129,7 @@ label {
     position: relative;
     display: inline-block;
 }
-.datagrid input{
+/*.datagrid input{
     margin: 0;
     -webkit-border-radius:4px;
     -moz-border-radius:4px;
@@ -170,7 +170,7 @@ label {
 	padding-right: 4px;
 	padding-top: 1px;
 	font-family: Avant Garde;
-}
+}*/
 
 
 select {
@@ -214,13 +214,13 @@ li :AFTER{
 
 .datagrid {
 	font: normal 12px/150% Geneva, Arial, Helvetica, sans-serif;
-	background: #fff;
+	/*background: #fff;
 	overflow: hidden;
 	border: 1px solid #004700;
 	-webkit-border-radius: 5px;
 	-moz-border-radius: 5px;
 	border-radius: 5px;
-	color: #004700;
+	color: #004700;*/
 }
 
 #titulos {
@@ -263,35 +263,35 @@ textarea {
 }
 
 #titleX {
-    width: 35px;
+
 }
 
 #titleY {
-    width: 32px;
+
 }
 
 #titleW {
-    width: 32px;
+
 }
 
 #titleH {
-    width: 32px;
+
 }
 
 #titleMetadata {
-    width: 180px;
+
 }
 
 #titleLanguage {
-    width: 140px;
+
 }
 
 #titlePSM {
-    width: 385px;
+
 }
 
 #titleRemove {
-    width: 50px;
+    padding-left: 28px;
 }
 
 .frame {
@@ -300,4 +300,114 @@ textarea {
 
 .frame #photo {
     width:900px;
+}
+
+input#x1 {
+    margin-right: 20px;
+}
+
+input#y1 {
+    margin-right: 20px;
+}
+
+input#width {
+    margin-right: 20px;
+}
+
+input#height {
+    margin-right: 20px;
+}
+
+.ocr-profiler-widget input[type="text"] {
+    width: 100%;
+}
+
+.alfresco-share .sticky-wrapper .ocr-profiler-widget button {
+    /* font: 99% Open Sans,arial,helvetica,clean,sans-serif; */
+    display: inline-block;
+    padding: 6px 12px;
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+
+.alfresco-share .sticky-wrapper .ocr-profiler-widget select {
+    width: 100%;
+}
+
+.nopadding {
+    padding: 0px !important;
+    margin: 0px !important;
+}
+
+.url-group {
+    margin-bottom: 50px;
+    margin-top: 25px;
+}
+
+.coordinate-group {
+    padding-bottom: 25px;
+}
+
+.button-group {
+    margin-top: 25px;
+}
+
+.col-xs-half {
+    width: 3.6%;
+    float: left;
+    position: relative;
+    min-height: 1px;
+    vertical-align: ;
+}
+
+.fewer-padding {
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.list-coordinate-item {
+    min-width: 30px;
+    text-align: center;
+    position: relative;
+    top: 6px;
+}
+
+.list-row-margin {
+    padding-left: 0px;
+    padding-right: 0px;
+    margin-bottom: 6px;
+}
+
+.col-xs-4-and-half {
+    width: 35.6%;
+    float: left;
+    position: relative;
+    min-height: 1px;
+}
+
+.remove-padding {
+    padding-left: 28px
+}
+
+#copyCode {
+    width: 100%;
+}
+
+.coordinate-group div.form-group div.input-group {
+    margin-right: 12px;
 }

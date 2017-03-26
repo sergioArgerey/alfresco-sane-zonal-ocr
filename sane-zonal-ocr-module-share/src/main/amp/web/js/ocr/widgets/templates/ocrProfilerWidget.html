@@ -1,71 +1,105 @@
 <div class="datagrid ocr-profiler-widget ocrProfiler-widget" id="form">
 
-    <span class="ocr">OCR</span><span><sub>by zylk</sub></span>
-    <div style="float: right;">
-
-<ul>
-    <li>
-        <p>Indique la imagen sobre la que quiere realizar el perfil de OCR.</p>
-        <input type="text" id="img-url" name="url" size="50"/>
-        <input type="submit" id="loadImageButton" value="url imagen"/>
+    <div class="col-xs-12 col-lg-8 url-group">
+        <label for="img-url">Indique la URL de imagen sobre la que quiere realizar el perfil de OCR.</label>
+        <div class="input-group">
+            <input type="text" class="form-control" id="img-url" name="url"/>
+            <span class="input-group-btn">
+                <!--<input type="submit" id="loadImageButton" class="btn btn-primary" value="url imagen"/>-->
+                <button id="loadImageButton" class="btn btn-primary" type="button">Cargar imagen</button>
+            </span>
+        </div>
         <input type="hidden" id="profile" name="profile"/>
-    </li>
-    <li>
-        <span>Document Type:</span>
-        <input type="text" id="type"/>
-    </li>
-    <li>
-        <strong>X<sub>1</sub>:</strong>
-        <input type="text" id="x1" value="0" size="6" style="margin-right: 20px;"/>
-        <strong>Y<sub>1</sub>:</strong>
-        <input type="text" id="y1" value="0" size="6" style="margin-right: 20px;"/>
-        <b>Width:</b><input type="text" value="300" id="width" size="6" style="margin-right: 20px;"/>
-        <b>Height:</b><input type="text" id="height" value="200" size="6" style="margin-right: 20px;"/>
-        <button id="btnAgregar">agregar zona ocr</button>
-    </li>
-    <li>
-        <button id="btnGenerar">generar perfil</button>
-        <input type="submit" id="btnDescargar" disabled="disabled" name="download" value="descargar">
-    </li>
+    </div>
 
-    <li class="hidden">
-        <span id="realX"></span>
-        <span id="realY"></span>
-    </li>
-    <li class="hidden">
-        <b>X<sub>2</sub>:</b>
-        <input type="text" id="x2" value="-" />
-    </li>
-    <li class="hidden">
-        <b>Y<sub>2</sub>:</b>
-        <input type="text" id="y2" value="-" />
-    </li>
-</ul>
-</div>
-<table id="titulos">
-    <thead>
-    <tr align='center'>
-        <th id="titleX">X</th>
-        <th id="titleY">Y</th>
-        <th id="titleW">W</th>
-        <th id="titleH">H</th>
-        <th id="titleMetadata">Metadata</th>
-        <th id="titleLanguage">Language</th>
-        <!-- <th id="titleTypography">Typography</th> -->
-        <th id="titlePSM">PSM</th>
-        <th id="titleRemove">X</th>
-    </tr>
-    </thead>
-</table>
-<div id="lista">
-    <!-- Dinamic list -->
-</div>
-<textarea id="copyCode" rows="10" cols="111" readonly="readonly"></textarea>
-<div class="container demo">
-    <div>
-        <div class="frame">
-            <img id="photo" src="" />
+    <div class="col-sm-6">
+        <div class="col-sm-12 nopadding">
+            <div class="form-group">
+                <label for="type">Document Type:</label>
+                <input type="text" id="type" class="form-control"/>
+            </div>
+        </div>
+        <div class="form-inline col-sm-12 coordinate-group">
+            <div class="form-group">
+                <div class="col-sm-6 col-md-6 col-lg-2 input-group">
+                    <span for="x1" class="input-group-addon"><strong>X<sub>1</sub>:</strong></span>
+                    <input id="x1" class="form-control" value="0" readonly/>
+                </div>
+                <div class="col-sm-6 col-md-6 col-lg-2 input-group">
+                    <span for="y1" class="input-group-addon"><strong>Y<sub>1</sub>:</strong></span>
+                    <input id="y1" class="form-control" value="0" readonly/>
+                </div>
+                <div class="col-sm-6 col-md-6 col-lg-2 input-group">
+                    <span for="width" class="input-group-addon"><strong>Width:</strong></span>
+                    <input id="width" class="form-control" value="300" readonly/>
+                </div>
+                <div class="col-sm-6 col-md-6 col-lg-2 input-group">
+                    <span for="height" class="input-group-addon"><strong>Height:</strong></span>
+                    <input id="height" class="form-control" value="200" readonly/>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-inline col-sm-12 coordinate-group">
+            <div class="form-group">
+                <div class="col-sm-6 col-md-6 col-lg-2 input-group">
+                    <span for="realX" class="input-group-addon"><strong>RealX:</strong></span>
+                    <input id="realX" class="form-control" readonly/>
+                </div>
+                <div class="col-sm-6 col-md-6 col-lg-2 input-group">
+                    <span for="realY" class="input-group-addon"><strong>RealY:</strong></span>
+                    <input id="realY" class="form-control" readonly/>
+                </div>
+                <div class="col-sm-6 col-md-6 col-lg-2 input-group">
+                    <span for="x2" class="input-group-addon"><strong>X<sub>2</sub>:</strong></span>
+                    <input id="x2" class="form-control" value="" readonly/>
+                </div>
+                <div class="col-sm-6 col-md-6 col-lg-2 input-group">
+                    <span for="y2" class="input-group-addon"><strong>Y<sub>2</sub>:</strong></span>
+                    <input id="y2" class="form-control" value="" readonly/>
+                </div>
+            </div>
         </div>
     </div>
-</div>
+
+    <div class="col-sm-12 col-md-12 col-lg-6">
+        <div class="form-group button-group">
+            <button id="btnAgregar" class="btn btn-primary">Agregar zona ocr</button>
+            <button id="btnGenerar" class="btn btn-primary">Generar perfil</button>
+            <button id="btnDescargar" class="btn btn-success" disabled="disabled">Descargar</button>
+        </div>
+        <div class="form-group">
+            <div class="panel panel-success">
+                <div class="panel-heading">OCR zone structures</div>
+                <table id="titulos" class="table">
+                    <thead>
+                    <tr align='center'>
+                        <th id="titleX" class="col-xs-half">X</th>
+                        <th id="titleY" class="col-xs-half">Y</th>
+                        <th id="titleW" class="col-xs-half">W</th>
+                        <th id="titleH" class="col-xs-half">H</th>
+                        <th id="titleMetadata" class="col-xs-3">Metadata</th>
+                        <th id="titleLanguage"  class="col-xs-2">Language</th>
+                        <!-- <th id="titleTypography" class="col-xs-3">Typography</th> -->
+                        <th id="titlePSM" class="col-xs-4-and-half">PSM</th>
+                        <th id="titleRemove" class="col-xs-1">X</th>
+                    </tr>
+                    </thead>
+                </table>
+                <div id="lista">
+                    <!-- Dinamic list -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-xs-12 demo">
+        <div>
+            <div class="frame">
+                <img id="photo" src="" />
+            </div>
+        </div>
+    </div>
+    <div class="col-xs-12 text-center">
+        <textarea id="copyCode" class="form-control hidden" rows="10" cols="111" readonly="readonly"></textarea>
+    </div>
 </div>

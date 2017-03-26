@@ -29,108 +29,73 @@ define(["dojo/_base/declare",
             },
 
             postCreate: function ocrProfilerWidget__postCreate() {
-                /*var url = Alfresco.constants.PROXY_URI + "slingshot/doclib/treenode/node/alfresco/company/home";
-                this.serviceXhr({url : url,
-                                 method: "GET",
-                                 successCallback: this._onSuccessCallback,
-                                 callbackScope: this});*/
-
-                 $("document").ready(function(){
-                     $("#upload").change(function() {
-                                 alert(this.value);
-                    });
-                 });
-
 
                 function preview(img, selection) {
-                    if (!selection.width || !selection.height)
+                    if (!selection || !selection.width || !selection.height) {
                         return;
+                    }
 
-                    var scaleX = 100 / selection.width;
-                    var scaleY = 100 / selection.height;
+                    //console.info(JSON.stringify(selection));
 
-                    $('#preview img').css({
-                        width : Math.round(scaleX * 300),
-                        height : Math.round(scaleY * 300),
-                        marginLeft : -Math.round(scaleX * selection.x1),
-                        marginTop : -Math.round(scaleY * selection.y1)
-                    });
+                    $("#realX").val(pic_real_width);
+                    $("#realY").val(pic_real_height);
 
-                    var pic_real_width = document.getElementById("realX").innerHTML;
-                    var pic_real_height = document.getElementById("realY").innerHTML;
                     var actual_with = document.getElementById("photo").width;
                     var actual_height = document.getElementById("photo").height;
 
-                    $('#x1').val(Math.round((selection.x1 / actual_with) * pic_real_width));
-                    $('#y1').val(
-                            Math.round((selection.y1 / actual_height) * pic_real_height));
-                    $('#x2').val(Math.round((selection.x2 / actual_with) * pic_real_width));
-                    $('#y2').val(
-                            Math.round((selection.y2 / actual_height) * pic_real_height));
-                    $('#width').val(
-                            Math.round((selection.width / actual_with) * pic_real_width));
-                    $('#height').val(
-                            Math
-                                    .round((selection.height / actual_height)
-                                            * pic_real_height));
-                }
+                    console.info("pic_real_width preview: " + pic_real_width);
+                    console.info("pic_real_height preview: " + pic_real_height);
+                    console.info("actual_with: " + actual_with);
+                    console.info("actual_height: " + actual_height);
 
-                var img = $("img")[0]; // Get my img elem
-                var pic_real_width, pic_real_height;
-                $("<img/>") // Make in memory copy of image to avoid css issues
-                .attr("src", $(img).attr("src")).load(function() {
-                    pic_real_width = this.width; // Note: $(this).width() will not
-                    pic_real_height = this.height; // work for in memory images.
-                });
+                    $('#x1').val( Math.round((selection.x1 / actual_with) * pic_real_width) );
+                    $('#y1').val( Math.round((selection.y1 / actual_height) * pic_real_height) );
+                    $('#x2').val( Math.round((selection.x2 / actual_with) * pic_real_width) );
+                    $('#y2').val( Math.round((selection.y2 / actual_height) * pic_real_height) );
+                    $('#width').val( Math.round((selection.width / actual_with) * pic_real_width) );
+                    $('#height').val( Math.round((selection.height / actual_height) * pic_real_height));
+                }
 
                 function listar(lista) {
                     var divLista = document.getElementById("lista");
                     divLista.innerHTML = "";
-                    var listaTable = document.createElement("TABLE");
-                    // 	listaTable.innerHTML = "<thead>"+
-                    // 					"<tr>"+
-                    // 						"<th>X</th>"+
-                    // 						"<th>Y</th>"+
-                    // 						"<th>W</th>"+
-                    // 						"<th>H</th>"+
-                    // 						"<th>Metadata</th>"+
-                    // 						"<th>Language</th>"+
-                    // 						"<th>Typography</th>"+
-                    // 						"<th>PSM</th>"+
-                    // 						"<th>X</th>"+
-                    // 					"</tr>"+
-                    // 				"</thead>";
-                    listaTable.className = "datagrid";
+                    var listaDiv = document.createElement("DIV");
+                    listaDiv.className = "datagrid";
                     var langArg = "language";
                     var metaArg = "metadata";
                     var typoArg = "typography";
                     var psmArg = "psm";
                     var removeArg = "btn-remove";
 
-                    var tbody = document.createElement("TBODY");
+                    var tbody = document.createElement("div");
+                    tbody.className = "col-xs-12 nopadding";
 
                     for (var i = 0; i < lista.length; i++) {
-                        var rectTR = document.createElement("TR");
-                        rectTR.setAttribute("align", "center")
-                        var xTD = document.createElement("TD");
-                        var yTD = document.createElement("TD");
-                        var widthTD = document.createElement("TD");
-                        var heightTD = document.createElement("TD");
-                        var metadataTD = document.createElement("TD");
-                        var languageTD = document.createElement("TD");
-                        var typographyTD = document.createElement("TD");
-                        var psmTD = document.createElement("TD");
-                        var removeTD = document.createElement("TD");
+                        var rectTR = document.createElement("div");
+                        rectTR.setAttribute("class", "col-xs-12 list-row-margin")
+                        var xTD = document.createElement("div");
+                        var yTD = document.createElement("div");
+                        var widthTD = document.createElement("div");
+                        var heightTD = document.createElement("div");
+                        var metadataTD = document.createElement("div");
+                        var languageTD = document.createElement("div");
+                        var typographyTD = document.createElement("div");
+                        var psmTD = document.createElement("div");
+                        var removeTD = document.createElement("div");
 
-                        xTD.setAttribute("style", "min-width: 30px;");
-                        yTD.setAttribute("style", "min-width: 30px;");
-                        widthTD.setAttribute("style", "min-width: 30px;");
-                        heightTD.setAttribute("style", "min-width: 30px;");
-                        removeTD.setAttribute("style", "min-width: 20px;");
+                        xTD.setAttribute("class", "list-coordinate-item col-xs-half");
+                        yTD.setAttribute("class", "list-coordinate-item col-xs-half");
+                        widthTD.setAttribute("class", "list-coordinate-item col-xs-half");
+                        heightTD.setAttribute("class", "list-coordinate-item col-xs-half");
+                        metadataTD.setAttribute("class", "col-xs-3 fewer-padding");
+                        languageTD.setAttribute("class", "col-xs-2 fewer-padding");
+                        typographyTD.setAttribute("class", "col-xs-3 fewer-padding");
+                        psmTD.setAttribute("class", "col-xs-4-and-half fewer-padding");
+                        removeTD.setAttribute("class", "col-xs-1 remove-padding");
 
                         var languageSelect = document.createElement("SELECT");
                         languageSelect.setAttribute("id", "language-" + i);
-                        //var langArg = "language";
+                        languageSelect.setAttribute("class", "form-control");
                         var index = i;
                         $(languageSelect).change(function() {
                             var id = this.getAttribute("id");
@@ -144,8 +109,7 @@ define(["dojo/_base/declare",
                         var metadataInput = document.createElement("INPUT");
                         metadataInput.setAttribute("id", "metadata-" + i);
                         metadataInput.setAttribute("size", "15");
-                        //var metaArg = "metadata";
-                        //var index = i;
+                        metadataInput.setAttribute("class", "form-control")
                         $(metadataInput).change(function() {
                             var id = this.getAttribute("id");
                             var metaArg = id.substring(0, id.indexOf('-'));
@@ -154,7 +118,7 @@ define(["dojo/_base/declare",
                             console.debug(lista[index][metaArg]);
                             lista[index][metaArg] = valor;
                         });
-             /*
+
                         var typographyInput = document.createElement("INPUT");
                         typographyInput.setAttribute("id", "typography-" + i);
                         typographyInput.setAttribute("size", "6");
@@ -168,9 +132,10 @@ define(["dojo/_base/declare",
                             console.debug(lista[index][typoArg]);
                             lista[index][typoArg] = valor;
                         });
-             */
+
                         var psmSelect = document.createElement("SELECT");
                         psmSelect.setAttribute("id", "psm-" + i);
+                        psmSelect.setAttribute("class", "form-control");
                         //var psmArg = "psm";
                         //var index = i;
                         $(psmSelect).change(function() {
@@ -185,6 +150,7 @@ define(["dojo/_base/declare",
 
                         var removeButton = document.createElement("BUTTON");
                         removeButton.setAttribute("id", "btn-remove-" + i);
+                        removeButton.setAttribute("class", "btn btn-warning");
                         removeButton.innerHTML = "X";
                         //var removeArg = "btn-remove";
                         //var index = i;
@@ -208,13 +174,13 @@ define(["dojo/_base/declare",
                         $(psmSelect).val(lista[i].psm);
 
                         metadataTD.appendChild(metadataInput)
-                        languageTD.innerHTML += "<!--[if !IE]> --> <div class='notIE'> <!-- <![endif]--><label />";
+                        //languageTD.innerHTML += "<!--[if !IE]> --> <div class='notIE'> <!-- <![endif]--><label />";
                         languageTD.appendChild(languageSelect);
-                        languageTD.innerHTML += "<!--[if !IE]> --></div> <!-- <![endif]-->";
+                        //languageTD.innerHTML += "<!--[if !IE]> --></div> <!-- <![endif]-->";
                         //typographyTD.appendChild(typographyInput);
-                        psmTD.innerHTML += "<!--[if !IE]> --> <div class='notIE'> <!-- <![endif]--><label />";
+                        //psmTD.innerHTML += "<!--[if !IE]> --> <div class='notIE'> <!-- <![endif]--><label />";
                         psmTD.appendChild(psmSelect);
-                        psmTD.innerHTML += "<!--[if !IE]> --></div> <!-- <![endif]-->";
+                        //psmTD.innerHTML += "<!--[if !IE]> --></div> <!-- <![endif]-->";
                         removeTD.appendChild(removeButton);
 
                         rectTR.appendChild(xTD);
@@ -229,8 +195,8 @@ define(["dojo/_base/declare",
 
                         tbody.appendChild(rectTR);
                     }
-                    listaTable.appendChild(tbody);
-                    divLista.appendChild(listaTable);
+                    listaDiv.appendChild(tbody);
+                    divLista.appendChild(listaDiv);
                 }
 
                 function fillPsm(psmSelect) {
@@ -483,35 +449,36 @@ define(["dojo/_base/declare",
 
                 }
 
-                $(function() {
-                    $('#photo').imgAreaSelect({
-                        x1 : 0,
-                        y1 : 0,
-                        x2 : 300,
-                        y2 : 200,
-                        handles : true,
-                        fadeSpeed : 200,
-                        onSelectChange : preview,
-                        onSelectEnd : function(img, selection) {
-                            /*
-                            var rect = {
-                                    x : selection.x1,
-                                    y : selection.y1,
-                                    width : selection.width,
-                                    height : selection.height
-                                    };
-                            lista.push(rect);
-                            listar(lista);
-                             */
-                        }
-                    });
-                });
-
                 var lista = [];
                 var json = {};
+                var pic_real_width, pic_real_height;
                 $(document).ready(function() {
-                    $('#btnAgregar').click(function(e) {
-                        //alert("asdsa sadsasad ssadsad");
+
+                    $("#loadImageButton").click(function(event) {
+                        var url = $("#img-url").val();
+                        $('#photo').attr("src", url);
+
+                        // Make in memory copy of image to avoid css issues
+                        $("<img/>").attr("id", "preview").attr("src", url).load(function() {
+                            pic_real_width = this.width; // Note: $(this).width() will not
+                            pic_real_height = this.height; // work for in memory images.
+                            console.info("pic_real_width: " + pic_real_width);
+                            console.info("pic_real_height: " + pic_real_height);
+                        });
+
+                        $('#photo').imgAreaSelect({
+                            x1 : 0,
+                            y1 : 0,
+                            x2 : 300,
+                            y2 : 200,
+                            handles : true,
+                            fadeSpeed : 200,
+                            onSelectChange : preview,
+                            onSelectEnd : preview
+                        });
+                    });
+
+                    $('#btnAgregar').click(function(event) {
                         var rect = {
                             x : x1.value,
                             y : y1.value,
@@ -524,27 +491,24 @@ define(["dojo/_base/declare",
                         };
                         lista.push(rect);
                         listar(lista);
-                        e.preventDefault();
+                        event.preventDefault();
                     });
-                });
 
-                $(document).ready(function() {
-                    $('#btnGenerar').click(function(e) {
+                    $('#btnGenerar').click(function(event) {
                         var ocrZones = "";
 
                         ocrZones = JSON.stringify(lista);
-                        var type = document
-                                .getElementById("type").value;
-                        var result = "{\"type\":\""
-                                + type
-                                + "\",\"ocr-zones\":"
-                                + ocrZones + "}";
+                        var type = document.getElementById("type").value;
+                        var result = "{\"type\":\""+ type + "\",\n\"ocr-zones\":" + ocrZones + "}";
                         document.getElementById("copyCode").value = result;
                         document.getElementById("profile").value = result;
-                        e.preventDefault();
+                        document.getElementById("copyCode").className = "form-control";
+                        event.preventDefault();
                         document.getElementById("btnDescargar").removeAttribute("disabled");
                     });
                 });
+
+
 
                 //implement JSON.stringify serialization
                 JSON.stringify = JSON.stringify || function(obj) {
