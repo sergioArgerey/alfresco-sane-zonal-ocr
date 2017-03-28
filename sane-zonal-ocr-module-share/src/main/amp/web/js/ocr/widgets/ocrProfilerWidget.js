@@ -476,6 +476,7 @@ define(["dojo/_base/declare",
                             onSelectChange : preview,
                             onSelectEnd : preview
                         });
+                        event.target.className= "btn btn-success";
                     });
 
                     $('#btnAgregar').click(function(event) {
@@ -505,6 +506,10 @@ define(["dojo/_base/declare",
                         document.getElementById("copyCode").className = "form-control";
                         event.preventDefault();
                         document.getElementById("btnDescargar").removeAttribute("disabled");
+                    });
+
+                    $('#btnDescargar').click(function(event) {
+
                     });
                 });
 

@@ -406,6 +406,8 @@ input#height {
 
 #copyCode {
     width: 100%;
+    position: relative;
+    top: 100px;
 }
 
 .coordinate-group div.form-group div.input-group {
@@ -414,4 +416,15 @@ input#height {
 
 .coordinate-group div.form-group div.input-group input {
     background-color: #d0e9c6;
+}
+
+.alfresco-ocr-logo-large {
+
+}
+
+@media (max-width: 1080px) {
+
+ .coordinate-group div.form-group div.input-group {
+    margin-bottom:10px;
+ }
 }
