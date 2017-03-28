@@ -204,7 +204,14 @@ public class JfreeSaneDeviceJson {
 
 	public static void main(String[] args) throws IOException, SaneException, JSONException {
 		if (args.length == 0) {
-			System.out.println("\nUsage:\n"
+			System.out.println(
+					"/***********************************************************************************************/\n" +
+					"/*                                                                                             */\n" +
+					"/*                                      SANE PROFILER                                          */\n" +
+					"/*                                                                                             */\n" +
+					"/***********************************************************************************************/\n"
+					+ "\n"
+					+ "\nUsage:\n"
 
 					+ "java -jar zk-generate-jfreesane-profile-json.jar <jsane-scanner-host> [name]\n\n"
 
