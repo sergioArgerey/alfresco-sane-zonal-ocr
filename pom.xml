@@ -27,6 +27,13 @@
   
   </dependencies>
 
+  <scm>
+    <url>https://github.com/sergioArgerey/alfresco-sane-zonal-ocr</url>
+    <connection>scm:git:git://github.com/sergioArgerey/alfresco-sane-zonal-ocr.git</connection>
+    <developerConnection>scm:git:git@github.com:sergioArgerey/alfresco-sane-zonal-ocr.git</developerConnection>
+    <tag>HEAD</tag>
+  </scm>
+  
   
   <!-- perfiles -->
   <profiles>
