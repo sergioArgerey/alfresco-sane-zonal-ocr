@@ -17,38 +17,28 @@
         </property>
     </bean>
 
-    <!-- Registration of new models -->
-    <!--<bean id="example.dictionaryBootstrap" parent="dictionaryModelBootstrap"-->
-          <!--depends-on="dictionaryBootstrap">-->
-        <!--<property name="models">-->
-            <!--<list>-->
-                <!--<value>alfresco/extension/scannerModel.xml</value>-->
-            <!--</list>-->
-        <!--</property>-->
-    <!--</bean>-->
+    <bean id="test.bootstrap"
+          class="org.alfresco.repo.module.ImporterModuleComponent"
+          parent="module.baseComponent">
 
-    <!--<bean id="test.bootstrap"-->
-          <!--class="org.alfresco.repo.module.ImporterModuleComponent"-->
-          <!--parent="module.baseComponent">-->
+        <!-- Module Details -->
+        <property name="moduleId" value="com_test" />
+        <property name="name" value="test" />
+        <property name="description" value="test" />
+        <property name="sinceVersion" value="1.0" />
+        <property name="appliesFromVersion" value="1.0" />
 
-        <!--&lt;!&ndash; Module Details &ndash;&gt;-->
-        <!--<property name="moduleId" value="com_test" />-->
-        <!--<property name="name" value="test" />-->
-        <!--<property name="description" value="test" />-->
-        <!--<property name="sinceVersion" value="1.0" />-->
-        <!--<property name="appliesFromVersion" value="1.0" />-->
-
-        <!--&lt;!&ndash; Data properties &ndash;&gt;-->
-        <!--<property name="importer" ref="spacesBootstrap"/>-->
-        <!--<property name="bootstrapViews">-->
-            <!--<list>-->
-                <!--<props>-->
-                    <!--<prop key="path">/${spaces.company_home.childname}/${spaces.dictionary.childname}/cm:Scanners</prop>-->
+        <!-- Data properties -->
+        <property name="importer" ref="spacesBootstrap"/>
+        <property name="bootstrapViews">
+            <list>
+                <props>
+                    <prop key="path">/${spaces.company_home.childname}/${spaces.dictionary.childname}/cm:Scanners</prop>
                     <!--<prop key="location">alfresco/module/${project.artifactId}/bootstrap/test-folder.acp</prop>-->
-                <!--</props>-->
-            <!--</list>-->
-        <!--</property>-->
-    <!--</bean>-->
+                </props>
+            </list>
+        </property>
+    </bean>
 
 
 </beans>
