@@ -19,7 +19,7 @@
       </property>
    </bean>
 
-	<bean id="zylk.evaluator.doclib.action.isScanned" class="net.zylk.scanner.CheckIfDocIsScannedEvaluator">
+	<bean id="zylk.evaluator.doclib.action.isScanned" class="net.zylk.alfresco.addons.scanner.CheckIfDocIsScannedEvaluator">
 	</bean>
    
    
