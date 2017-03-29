@@ -14,8 +14,7 @@
 	<!-- Imports are required to allow references to definitions in other models -->
 	<imports>
 		<!-- Import Alfresco Dictionary Definitions -->
-		<import uri="http://www.alfresco.org/model/dictionary/1.0"
-			prefix="d" />
+		<import uri="http://www.alfresco.org/model/dictionary/1.0" prefix="d" />
 		<!-- Import Alfresco Content Domain Model Definitions -->
 		<import uri="http://www.alfresco.org/model/content/1.0" prefix="cm"/>
 		<import uri="http://www.alfresco.org/model/dictionary/1.0" prefix="d"/>
