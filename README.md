@@ -1,6 +1,8 @@
 # alfresco-sane-zonal-ocr
 Zonal OCR for scanners based on SANE integrated with Alfresco/Share
 
+[![	temporary status (simple build status)](https://img.shields.io/teamcity/http/teamcity.jetbrains.com/s/bt345.svg)]()
+
 
 ```bash
 ~/workspace/OCR/alfresco-sane-zonal-ocr$ cd sane-zonal-ocr-module-alfresco/
