@@ -12,7 +12,7 @@
     <bean id="sane-zonal-ocr-module-alfresco.dictionaryBootstrap" parent="dictionaryModelBootstrap" depends-on="dictionaryBootstrap">
         <property name="models">
             <list>
-                <value>alfresco/module/${project.artifactId}/model/ocr-model.xml</value>
+                <value>alfresco/module/${project.artifactId}/model/ocrModel.xml</value>
             </list>
         </property>
     </bean>
@@ -34,7 +34,7 @@
             <list>
                 <props>
                     <prop key="path">/${spaces.company_home.childname}/${spaces.dictionary.childname}/cm:Scanners</prop>
-                    <!--<prop key="location">alfresco/module/${project.artifactId}/bootstrap/test-folder.acp</prop>-->
+                    <prop key="location">alfresco/module/${project.artifactId}/bootstrap/ocr_profiles.acp</prop>
                 </props>
             </list>
         </property>

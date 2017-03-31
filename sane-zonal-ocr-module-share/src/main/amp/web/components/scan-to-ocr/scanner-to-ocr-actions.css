@@ -1,0 +1,4 @@
+/* /tomcat/webapps/share/components/documentlibrary */
+.doclist .onActionBackup a {
+   background-image: url(backup-16.png) !important;
+}

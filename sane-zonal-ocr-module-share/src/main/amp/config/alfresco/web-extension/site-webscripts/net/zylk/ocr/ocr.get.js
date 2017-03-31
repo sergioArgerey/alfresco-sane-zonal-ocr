@@ -1,5 +1,16 @@
 model.jsonModel = {
     widgets: [
+    /*
+    * JSON Model ID: HEADER_LOGO
+    * Widget Type:	alfresco/logo/Logo
+    * Find Widget Code Snippet:	widgetUtils.findObject(model.jsonModel.widgets, "id", "HEADER_LOGO");
+    */
+
+    /*
+    * JSON Model ID:	HEADER_TITLE
+    * Widget Type:	alfresco/header/Title
+    * Find Widget Code Snippet:	widgetUtils.findObject(model.jsonModel.widgets, "id", "HEADER_TITLE");
+    */
     {
         id: "SET_PAGE_TITLE",
         name: "alfresco/header/SetTitle",

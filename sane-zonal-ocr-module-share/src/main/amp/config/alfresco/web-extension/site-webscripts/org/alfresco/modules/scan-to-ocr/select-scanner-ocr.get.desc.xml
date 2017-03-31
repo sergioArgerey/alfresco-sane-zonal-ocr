@@ -1,0 +1,6 @@
+<webscript>
+	<shortname>Get Perfiles</shortname>
+	<description>Get Perfiles</description>
+	<url>/modules/scan-to-ocr/select-scanner-ocr</url>
+	<format default="html">argument</format>
+</webscript>
