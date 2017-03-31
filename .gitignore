@@ -1,4 +1,6 @@
 target/
+*.class
+
 pom.xml.tag
 pom.xml.releaseBackup
 pom.xml.versionsBackup
@@ -16,4 +18,4 @@ buildNumber.properties
 *.iml
 .idea
 
-sane-zonal-ocr-module-alfresco/alf_data_dev/
+/sane-zonal-ocr-module-alfresco/alf_data_dev/**/*
