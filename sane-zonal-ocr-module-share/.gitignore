@@ -15,5 +15,3 @@ buildNumber.properties
 # Intellij Idea
 *.iml
 .idea
-
-alf_data_dev/
