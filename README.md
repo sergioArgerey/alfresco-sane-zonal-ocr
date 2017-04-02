@@ -42,5 +42,6 @@ http://localhost:8081/share/page/hdp/ws/zonal-ocr-profiler
 ## Todo list
 - [x] Split into different actions (Scan, Scan with OCR, OCR)
 - [x] Change the access of profiler to admin tools
+- [ ] Add Network Sane Profiler JSON test with JSON schema
 - [ ] Clean & refactor old java code
 - [ ] Use tesseract securely (JNA, JNI)
