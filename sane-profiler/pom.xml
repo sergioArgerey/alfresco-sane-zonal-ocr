@@ -137,6 +137,7 @@
               <jsonSchema>${basedir}/src/test/resources/data.schema</jsonSchema>
               <includes>
                 <include>**/*.json</include>
+                <excludes></excludes>
               </includes>
             </validation>
           </validations>
