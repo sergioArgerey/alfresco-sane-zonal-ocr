@@ -47,7 +47,7 @@ if (adminMenu != null)
                {
                   name: "alfresco/header/AlfMenuItem",
                   config: {
-                     label: "site-webscripts/net/zylk/ocr/profiler Zonal OCR Profiler",
+                     label: "Zonal OCR Profiler",
                      targetUrl: "hdp/ws/zonal-ocr-profiler"
                   }
                }
