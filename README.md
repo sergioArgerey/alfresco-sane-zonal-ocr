@@ -15,6 +15,12 @@ Zonal OCR for scanners based on SANE integrated with Alfresco/Share
 ~/alfresco-sane-zonal-ocr$ cd sane-zonal-ocr-module-share/
 ~/alfresco-sane-zonal-ocr/sane-zonal-ocr-module-share$ ./run.sh 
 ```
+
+## Command line network sane client
+![command-line-sane-network-client](https://cloud.githubusercontent.com/assets/24793099/24587575/8388369a-17b9-11e7-945d-9353baffd69f.png)
+
+
+
 <!---
 ![	Actions)](https://cloud.githubusercontent.com/assets/24793099/24570188/81f36462-166a-11e7-94c1-da91a78c8f1b.png)
 -->
