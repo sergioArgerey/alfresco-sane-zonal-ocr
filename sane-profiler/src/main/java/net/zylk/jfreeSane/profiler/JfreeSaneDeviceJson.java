@@ -66,6 +66,9 @@ public class JfreeSaneDeviceJson {
 									RangeConstraint rc = option.getRangeConstraints();
 									optionJSON.put("range", rc.getMinimumFixed() + "-" + rc.getMaximumFixed());
 								} catch (Exception e) {
+								    //TODO refactor throw ?
+                                    logger.warning("RangeConstraint Type Fixed ?");
+								    logger.warning(e);
 								}
 							}
 						} else if (option.getType() == OptionValueType.INT) {
@@ -75,6 +78,9 @@ public class JfreeSaneDeviceJson {
 									RangeConstraint rc = option.getRangeConstraints();
 									optionJSON.put("range", rc.getMinimumInteger() + "-" + rc.getMaximumInteger());
 								} catch (Exception e) {
+                                    //TODO refactor throw ?
+                                    logger.warning("RangeConstraint Type Integer ?");
+                                    logger.warning(e);
 								}
 							}
 						} else if (option.getType() == OptionValueType.BOOLEAN) {
@@ -213,17 +219,17 @@ public class JfreeSaneDeviceJson {
 					+ "\n"
 					+ "\nUsage:\n"
 
-					+ "java -jar zk-generate-jfreesane-profile-json.jar <jsane-scanner-host> [name]\n\n"
+					+ "java -jar sane-profiler-1.0-SNAPSHOT.jar <jsane-scanner-host> [name]\n\n"
 
 					+ "Example:\n"
 
-					+ "java -jar zk-generate-jfreesane-profile-json.jar scanner.zylk.net\n\n"
+					+ "java -jar sane-profiler-1.0-SNAPSHOT.jar scanner.zylk.net\n\n"
 
 					+ "1135n Laser MFP on USB:0\n"
 					+ "1135n Laser MFP on 192.168.1.3\n"
 					+ "Dell 1135n Laser MFP\n\n"
 
-					+ "java -jar zk-generate-jfreesane-profile-json.jar scanner.zylk.net \"Dell 1135n Laser MFP\"\n"
+					+ "java -jar sane-profiler-1.0-SNAPSHOT.jar scanner.zylk.net \"Dell 1135n Laser MFP\"\n"
 			);
 
 		} else if (args.length == 1) {
