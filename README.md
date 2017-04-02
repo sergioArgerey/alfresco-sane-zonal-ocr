@@ -33,5 +33,6 @@ http://localhost:8081/share/page/hdp/ws/zonal-ocr-profiler
 
 ## Todo list
 - [x] Split into different actions (Scan, Scan with OCR, OCR)
+- [ ] Clean & refactor old java code
 - [ ] Change the access of profiler to admin tools
 - [ ] Use tesseract securely (JNA, JNI)
