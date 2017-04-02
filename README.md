@@ -16,15 +16,17 @@ Zonal OCR for scanners based on SANE integrated with Alfresco/Share
 ~/alfresco-sane-zonal-ocr/sane-zonal-ocr-module-share$ ./run.sh 
 ```
 <!---
-[![	Actions)](https://cloud.githubusercontent.com/assets/24793099/24570188/81f36462-166a-11e7-94c1-da91a78c8f1b.png)]()
+![	Actions)](https://cloud.githubusercontent.com/assets/24793099/24570188/81f36462-166a-11e7-94c1-da91a78c8f1b.png)
 -->
 ## Contextual actions
-[![	Actions)](https://cloud.githubusercontent.com/assets/24793099/24570198/8c95e20a-166a-11e7-8d2f-569926fdddd9.png)]()
+![Actions)](https://cloud.githubusercontent.com/assets/24793099/24570198/8c95e20a-166a-11e7-8d2f-569926fdddd9.png)
 
 
 ## Zonal OCR Profiler included in SHARE
-Temporary access:
+![admin-tools-menu](https://cloud.githubusercontent.com/assets/24793099/24587092/2bec52e4-17b0-11e7-82b3-4c49724f70bd.png)
+Or direct link:
 http://localhost:8081/share/page/hdp/ws/zonal-ocr-profiler
+
 
 
 
