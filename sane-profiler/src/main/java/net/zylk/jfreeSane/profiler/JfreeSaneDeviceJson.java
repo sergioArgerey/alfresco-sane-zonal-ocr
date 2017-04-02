@@ -9,12 +9,12 @@ import us.monoid.web.Resty;
 import java.io.IOException;
 import java.net.InetAddress;
 import java.util.List;
-import java.util.logging.Logger;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 
 public class JfreeSaneDeviceJson {
 
-	private static final Logger logger = Logger.getLogger(JfreeSaneDeviceJson.class.getName());
-
+	private static final Log logger = LogFactory.getLog(JfreeSaneDeviceJson.class.getName());
 
 	public JSONObject listAllDevicesJson(SaneSession session, String host) throws IOException, SaneException, JSONException {
 
@@ -67,8 +67,8 @@ public class JfreeSaneDeviceJson {
 									optionJSON.put("range", rc.getMinimumFixed() + "-" + rc.getMaximumFixed());
 								} catch (Exception e) {
 								    //TODO refactor throw ?
-                                    logger.warning("RangeConstraint Type Fixed ?");
-								    logger.warning(e);
+                                    logger.warn("RangeConstraint Type Fixed ?");
+								    e.printStackTrace();
 								}
 							}
 						} else if (option.getType() == OptionValueType.INT) {
@@ -79,8 +79,8 @@ public class JfreeSaneDeviceJson {
 									optionJSON.put("range", rc.getMinimumInteger() + "-" + rc.getMaximumInteger());
 								} catch (Exception e) {
                                     //TODO refactor throw ?
-                                    logger.warning("RangeConstraint Type Integer ?");
-                                    logger.warning(e);
+                                    logger.warn("RangeConstraint Type Integer ?");
+                                    e.printStackTrace();
 								}
 							}
 						} else if (option.getType() == OptionValueType.BOOLEAN) {
@@ -236,10 +236,10 @@ public class JfreeSaneDeviceJson {
 			InetAddress address = null;
 			address = InetAddress.getByName(args[0]);
 			SaneSession session = null;
-			//logger.info("antes de conectar");
-			//logger.info("" + InetAddress.getByName("localhost"));
+			logger.debug("antes de conectar");
+			logger.debug("" + InetAddress.getByName("localhost"));
 			session = SaneSession.withRemoteSane(address);
-			//logger.info("Abre session");
+			logger.debug("Abre session");
 			List<SaneDevice> devices = (List<SaneDevice>) session.listDevices();
 			System.out.println("");
 			for (SaneDevice saneDevice : devices) {

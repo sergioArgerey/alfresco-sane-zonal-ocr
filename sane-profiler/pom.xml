@@ -57,6 +57,11 @@
       <version>2.2.4</version>
       <scope>compile</scope>
     </dependency>
+    <dependency>
+      <groupId>commons-logging</groupId>
+      <artifactId>commons-logging</artifactId>
+      <version>1.2</version>
+    </dependency>
   </dependencies>
 
   
@@ -106,6 +111,36 @@
             </configuration>
           </execution>
         </executions>
+      </plugin>
+
+      <plugin>
+        <groupId>com.groupon.maven.plugin.json</groupId>
+        <artifactId>json-schema-validator</artifactId>
+        <version>1.2.0</version>
+      </plugin>
+
+      <plugin>
+        <artifactId>json-schema-validator</artifactId>
+        <groupId>com.groupon.maven.plugin.json</groupId>
+        <executions>
+          <execution>
+            <phase>verify</phase>
+            <goals>
+              <goal>validate</goal>
+            </goals>
+          </execution>
+        </executions>
+        <configuration>
+          <validations>
+            <validation>
+              <directory>${basedir}/src/main/resources/data</directory>
+              <jsonSchema>${basedir}/src/test/resources/data.schema</jsonSchema>
+              <includes>
+                <include>**/*.json</include>
+              </includes>
+            </validation>
+          </validations>
+        </configuration>
       </plugin>
 
     </plugins>
