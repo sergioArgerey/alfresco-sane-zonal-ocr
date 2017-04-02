@@ -7,13 +7,13 @@ Zonal OCR for scanners based on SANE integrated with Alfresco/Share
 
 
 ```bash
-~/workspace/OCR/alfresco-sane-zonal-ocr$ cd sane-zonal-ocr-module-alfresco/
-~/workspace/OCR/alfresco-sane-zonal-ocr/sane-zonal-ocr-module-alfresco$ ./run.sh 
+~/alfresco-sane-zonal-ocr$ cd sane-zonal-ocr-module-alfresco/
+~/alfresco-sane-zonal-ocr/sane-zonal-ocr-module-alfresco$ ./run.sh 
 ```
 
 ```bash
-~/workspace/OCR/alfresco-sane-zonal-ocr$ cd sane-zonal-ocr-module-share/
-~/workspace/OCR/alfresco-sane-zonal-ocr/sane-zonal-ocr-module-share$ ./run.sh 
+~/alfresco-sane-zonal-ocr$ cd sane-zonal-ocr-module-share/
+~/alfresco-sane-zonal-ocr/sane-zonal-ocr-module-share$ ./run.sh 
 ```
 <!---
 [![	Actions)](https://cloud.githubusercontent.com/assets/24793099/24570188/81f36462-166a-11e7-94c1-da91a78c8f1b.png)]()
@@ -33,6 +33,6 @@ http://localhost:8081/share/page/hdp/ws/zonal-ocr-profiler
 
 ## Todo list
 - [x] Split into different actions (Scan, Scan with OCR, OCR)
+- [x] Change the access of profiler to admin tools
 - [ ] Clean & refactor old java code
-- [ ] Change the access of profiler to admin tools
 - [ ] Use tesseract securely (JNA, JNI)
